@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: {{myhost}}
   tasks:
     - name: Restart service httpd, in all cases
       ansible.builtin.systemd:
