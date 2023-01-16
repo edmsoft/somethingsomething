@@ -1,5 +1,7 @@
 --
-- name: Restart service httpd, in all cases
-  ansible.builtin.systemd:
-    state: restarted
-    name: apache2
+- hosts: all
+  tasks:
+    - name: Restart service httpd, in all cases
+      ansible.builtin.systemd:
+        state: restarted
+        name: apache2
