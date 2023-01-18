@@ -1,0 +1,22 @@
+- name: Get the list of all the nodes which are running over a month
+  hosts: "{{ myhost }}"
+  gather_facts: false
+  tasks:
+
+      - name: Show hostname for sanity check (or just use -v flag for verbose)
+        command: hostname
+        register: hostname
+      - debug: var=hostname.stdout_lines
+
+      - name: Check uptime prior reboot
+        shell: cut -d ' ' -f1 /proc/uptime
+        register: UPTIME_PRE_REBOOT
+
+      - name: Setting fact for number of days
+        set_fact:
+          uptime_days: "{ { (UPTIME_PRE_REBOOT.stdout | int / 86400) | round(0) } }"
+
+      - name: Hosts to be rebooted.
+        debug:
+          msg: " has not been rebooted since  days,which is older than a month"
+        when: (uptime_days | int) > 30
