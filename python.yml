@@ -5,7 +5,7 @@
     tasks:
 
     - name: "just execute a ls -lrt command"
-      shell: "ls -lrt; pwd"
+      shell: "ls -lrt; pwd; python3 --version ;python --version"
       register: "output"
 
     - debug: var=output.stdout_lines
