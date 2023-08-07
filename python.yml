@@ -1,7 +1,11 @@
 ---
-- name: run python script
-  command: ./mypythonscript.py
-  args:
-    chdir: "{{ role_path }}"/files
-  delegate_to: 127.0.0.1
-  run_once: true
+  - name: "Playing with Ansible and Git"
+    hosts: localhost
+    connection: local 
+    tasks:
+
+    - name: "just execute a ls -lrt command"
+      shell: "ls -lrt; pwd"
+      register: "output"
+
+    - debug: var=output.stdout_lines
