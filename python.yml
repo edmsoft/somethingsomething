@@ -1,3 +1,4 @@
+---
 - name: run python script
   command: ./mypythonscript.py
   args:
