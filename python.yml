@@ -1,0 +1,6 @@
+- name: run python script
+  command: ./mypythonscript.py
+  args:
+    chdir: "{{ role_path }}"/files
+  delegate_to: 127.0.0.1
+  run_once: true
