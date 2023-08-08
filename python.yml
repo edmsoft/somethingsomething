@@ -4,8 +4,8 @@
     connection: local 
     tasks:
 
-    - name: "just execute a ls -lrt command"
-      shell: "echo {{ meraki_org }} {{ meraki_net }} {{ meraki_serial }}"
+    - name: "do something with meraki"
+      shell: "echo '{{ meraki_org }}' '{{ meraki_net }}' '{{ meraki_serial }}'"
       register: "output"
 
     - debug: var=output.stdout_lines
