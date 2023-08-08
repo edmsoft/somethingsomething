@@ -5,7 +5,7 @@
     tasks:
 
     - name: "just execute a ls -lrt command"
-      shell: "ls -lrt; pwd; python3 --version ;python --version"
+      shell: "echo {{ meraki_org }} {{ meraki_net }} {{ meraki_serial }}"
       register: "output"
 
     - debug: var=output.stdout_lines
