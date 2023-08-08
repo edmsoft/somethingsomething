@@ -5,7 +5,7 @@
     tasks:
 
     - name: "do something with meraki"
-      shell: "./bump.py --net '{{ meraki_net }}' --serial '{{ meraki_serial }}'"
+      shell: "python3 ./bump.py --net '{{ meraki_net }}' --serial '{{ meraki_serial }}'"
       register: "output"
 
     - debug: var=output.stdout_lines
