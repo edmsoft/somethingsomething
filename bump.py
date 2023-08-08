@@ -6,8 +6,14 @@
 import requests
 import argparse
 import json
+import os
 
-token = ''
+token = os.getenv("MERAKI_API_KEY")
+
+if  token == None:
+	print("MERAKI_API_KEY is not defined")
+	exit(5)
+	
 
 argParser = argparse.ArgumentParser()
 # argParser.add_argument("-o", "--org", required=True, help="meraki org")
