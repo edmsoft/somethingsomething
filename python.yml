@@ -3,9 +3,9 @@
     hosts: localhost
     connection: local 
     tasks:
-
     - name: "do something with meraki"
-      shell: "python3 ./bump.py --net '{{ meraki_net }}' --serial '{{ meraki_serial }}'"
+      delegate_to: localhost
+      shell: "echo '{{ bearer_token }}' python3 ./bump.py --net '{{ meraki_net }}' --serial '{{ meraki_serial }}'"
       register: "output"
 
     - debug: var=output.stdout_lines
