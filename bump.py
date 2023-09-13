@@ -9,7 +9,6 @@ import json
 import os
 
 token = os.getenv("MERAKI_API_KEY")
-pippo = os.getenv("pippo")
 
 if  token == None:
 	print("MERAKI_API_KEY is not defined")
@@ -26,7 +25,6 @@ args = argParser.parse_args()
 # print("Org:"+args.org);
 print("Network:"+args.net);
 print("Serial:"+args.serial);
-print("Pippo:"+pippo);
 
 topo_url = "https://api.meraki.com/api/v1/networks/"+args.net+"/topology/linkLayer"
 payload = None
