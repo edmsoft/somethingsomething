@@ -61,7 +61,7 @@ for link in data['links']:
 	if right['device']['serial'] == lookfor:
 		found=right
 		conn=left
-
+exit(5)
 if found != False:
 	# DEVICE: {'node': {'derivedId': '247165646677235', 'type': 'device'}, 'device': {'serial': 'AAAA-BBB-CCCC, 'name': 'def'}, 'discovered': {'lldp': {'portId': '0', 'portDescription': 'eth0'}, 'cdp': None}}
 	# CONNECTS TO: {'node': {'derivedId': '114598823386502', 'type': 'device'}, 'device': {'serial': 'EEEE-FFFF-DDDD', 'name': 'abc'}, 'discovered': {'lldp': {'portId': '3', 'portDescription': 'Port 3'}, 'cdp': None}}
